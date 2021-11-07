@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@800&family=Source+Code+Pro:wght@900&display=swap');
+
+:root {
+    --pink: #FC92C8;
+    --fade-pink: #F3F0F7;
+    --blue: #40EEF2;
+    --glass-blue: #40EDF2;
+    --deep-purple: #6F3BC2;
+    --white: #FFFFFF;
+    --white-transparent: rgba(255, 255, 255, .15);
+    --dark: #261838;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: var(--white);
+    background-color: var(--dark);
+}
+
+.sides {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: url("../img/background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.sides > .shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    height: 100vh;
+    z-index: 0;
+}
+
+.sides > .left-side {
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+}
+
+.sides > .right-side {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 20px 0 20px;
+    z-index: 1;
+}
+
+.right-side > .text-info {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.right-side > .sign-up-form {
+    margin-top: 5%;
+    width: 90%;
+}
+
+.sign-up-form p {
+    background-color: var(--pink);
+    padding: 0.5rem 2rem;
+    font-size: 1.5rem;
+    transform: skewX(-25deg) translateX(31.5px);
+    font-family: "PT Mono";
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0;
+    align-self: end;
+}
+
+.sign-up-form fieldset {
+    display: flex;
+    border: none;
+    flex-direction: column;
+    padding: 1rem 5rem;
+}
+
+.sign-up-form input {
+    height: 80px;
+    padding: 5px 10px;
+    background: var(--fade-pink);
+    box-shadow: inset -20px -10px 0px var(--pink);
+    transform: skewX(-25deg);
+    border: none;
+    font-family: "PT Mono";
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+.sign-up-form input:focus {
+    outline: none;
+}
+
+.sign-up-form button {
+    margin-top: 2rem;
+    margin-right: 8rem;
+    float: right;
+    position: relative;
+    width: 250px;
+    height: 70px;
+    clip-path: polygon(0 0, 10% 50%, 0 100%, 90% 100%, 100% 50%, 90% 0);
+    background-size: cover;
+    background: var(--dark);
+    font-weight: bolder;
+    color: var(--white);
+    font-size: 1.3rem;
+    font-style: italic;
+    border: none;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.sign-up-form button:hover{
+    cursor: pointer;
+    text-shadow: 2px 2px 0 var(--blue);
+    color: var(--dark);
+    background: var(--white);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.sign-up-form div#button {
+    position: relative;
+    filter: drop-shadow(-5px 0px 0 var(--blue));
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.sign-up-form div#button:hover {
+    filter: drop-shadow(5px 0px 0 var(--blue));
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.games {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 0 160px;
+}
+.games > .under-text {
+    position: absolute;
+    top: -250px;
+    font-size: 10rem;
+    font-weight: bolder;
+    line-height: 18rem;
+    color: transparent;
+    -webkit-text-stroke: 0.5px var(--white-transparent);
+    z-index: -1;
+    user-select: none;
+    font-family: "Sen";
+}
+.games > .title {
+    text-align: center;
+    position: relative;
+    height: 100px;
+    width: 70%;
+    font-size: 7rem;
+    font-family: "Source Code Pro";
+}
+.games > .title::after {
+    content: "LES JEUX";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    height: 100%;
+    width: 100%;
+    -webkit-text-stroke: 1px var(--white);
+    color: transparent;
+    font-family: "Source Code Pro";
+}
+.games > hr {
+    width: 70%;
+    border-style: dashed;
+    margin-bottom: 50px;
+}
+.game {
+    position: relative;
+    display: flex;
+    border-radius: 25px;
+    max-width: 80%;
+    width: fit-content;
+    align-items: center;
+    margin: 50px 0;
+}
+.game:nth-child(odd) {
+    background: linear-gradient(90deg, #6F3BC2 250px, #40EDF2 100%);
+    float: left;
+}
+.game:nth-child(even) {
+    background: linear-gradient(90deg, #40EDF2 0%, #6F3BC2 calc(100% - 250px));
+    flex-direction: row-reverse;
+    float: right;
+}
+.game > .cover {
+    border-radius: 25px;
+}
+.game > p {
+    font-size: 2rem;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-style: italic;
+    font-weight: 600;
+}
+.alert-info {
+    padding: 50px;
+    background-color: var(--dark);
+    width: 100vw;
+    display: none;
+}
+
+@media screen and (max-width: 1270px) {
+    .alert-info {
+        display: block;
+    }
+    .sides {
+        flex-direction: column;
+        width: 100vw;
+        height: calc(100vh - 150px);
+        padding: 50px 0;
+    }
+    .shape {
+        display: none;
+    }
+    .sides > .right-side {
+        margin: 0;
+        text-align: center;
+        align-items: center;
+    }
+    .sign-up-form {
+        align-content: center;
+        justify-items: center;
+    }
+    .sign-up-form {
+        align-content: center;
+        justify-items: center;
+    }
+    .right-side > .text-info {
+        margin-top: 20px;
+        padding: 10px 30px;
+        text-align: center;
+        font-size: 1rem;
+        background-color: var(--dark);
+    }
+    .under-text {
+        display: none;
+    }
+    .games > .title {
+        font-size: 5rem;
+        width: 100%;
+    }
+    .game:nth-child(odd), .game:nth-child(even) {
+        flex-direction: column;
+        width: 100vw;
+    }
+    .logo {
+        width: 100vw;
+    }
+}
