@@ -13,15 +13,14 @@ class Player extends Migration
      */
     public function up()
     {
-        Schema::create("players", function(Blueprint $schema) {
+        Schema::create("player", function(Blueprint $schema) {
             $schema->string('name')->nullable(false);
             $schema->string('surname')->nullable(false);
             $schema->string('username')->nullable(false);
-            $schema->string('email')->nullable(false)->unique();
+            $schema->string('email')->primary();
             $schema->string('team_name')->nullable(false);
             $schema->text('ticket_id')->nullable(true)->default(null);
-            $schema->primary(['email', 'team_name']);
-            $schema->foreign('team_name')->references('name')->on('teams');
+            $schema->foreign('team_name')->references('name')->on('team');
         });
     }
 
@@ -32,7 +31,7 @@ class Player extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("players");
-        Schema::dropIfExists("teams");
+        Schema::dropIfExists("player");
+        Schema::dropIfExists("team");
     }
 }

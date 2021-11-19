@@ -9,112 +9,121 @@
 </head>
 <body class="bg-dark text-white">
     <div class="container">
-        <form action="/register/step2" method="POST">
+        <h1 class="display-1">Inscription - Etape 1</h1>
+        <hr/>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form action="/register/validate" method="POST">
             @csrf
-            <h1 class="display-1">Inscription - Etape 1</h1>
-            <hr/>
             <div class="mb-5">
                 <label class="form-label">Nom de l'équipe</label>
-                <input class="form-control" type="text" value="{{$team_name}}" name="team_name"/>
+                <input class="form-control" type="text" value="{{$team_name}}" name="team_name" required/>
             </div>
             <h3>Joueur 1</h3>
             <div class="row">
                 <div class="col mb-5">
                     <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[0][name]"/>
+                    <input class="form-control" type="text" name="player[0][name]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[0][surname]"/>
+                    <input class="form-control" type="text" name="player[0][surname]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[0][username]"/>
+                    <input class="form-control" type="text" name="player[0][username]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[0][email]"/>
+                    <input class="form-control" type="email" name="player[0][email]" required/>
                 </div>
             </div>
             <h3>Joueur 2</h3>
             <div class="row">
                 <div class="col mb-5">
                     <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[1][name]"/>
+                    <input class="form-control" type="text" name="player[1][name]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[1][surname]"/>
+                    <input class="form-control" type="text" name="player[1][surname]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[1][username]"/>
+                    <input class="form-control" type="text" name="player[1][username]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[1][email]"/>
+                    <input class="form-control" type="email" name="player[1][email]" required/>
                 </div>
             </div>
             <h3>Joueur 3</h3>
             <div class="row">
                 <div class="col mb-5">
                     <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[2][name]"/>
+                    <input class="form-control" type="text" name="player[2][name]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[2][surname]"/>
+                    <input class="form-control" type="text" name="player[2][surname]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[2][username]"/>
+                    <input class="form-control" type="text" name="player[2][username]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[2][email]"/>
+                    <input class="form-control" type="email" name="player[2][email]" required/>
                 </div>
             </div>
             <h3>Joueur 4</h3>
             <div class="row">
                 <div class="col mb-5">
                     <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[3][name]"/>
+                    <input class="form-control" type="text" name="player[3][name]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[3][surname]"/>
+                    <input class="form-control" type="text" name="player[3][surname]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[3][username]"/>
+                    <input class="form-control" type="text" name="player[3][username]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[3][email]"/>
+                    <input class="form-control" type="email" name="player[3][email]" required/>
                 </div>
             </div>
             <h3>Joueur 5</h3>
             <div class="row">
                 <div class="col mb-5">
                     <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[4][name]"/>
+                    <input class="form-control" type="text" name="player[4][name]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[4][surname]"/>
+                    <input class="form-control" type="text" name="player[4][surname]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[4][username]"/>
+                    <input class="form-control" type="text" name="player[4][username]" required/>
                 </div>
                 <div class="col mb-5">
                     <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[4][email]"/>
+                    <input class="form-control" type="email" name="player[4][email]" required/>
                 </div>
             </div>
             <div class="row">
                 <div class="mb-5 d-inline-block">
-                    <input type="checkbox" class="form-check-input" name="rules">
+                    <input type="checkbox" class="form-check-input" name="rules" required>
                     <label> En cochant cette case vous confirmez avoir lu et accepté <a target="reglement" href="/reglement">le règlement du tournoi</a></label>
                 </div>
             </div>

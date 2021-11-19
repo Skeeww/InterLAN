@@ -18,6 +18,7 @@
         <hr/>
         <h3>Déroulement des inscriptions</h3>
         <p>La LAN sera organiser sous forme de tournoi entre équipes de 5 joueurs dispersés dans des poules. <b>La personne s'inscrivant à l'InterLAN est le "chef de l'équipe"</b>, il devra, lors de l'inscription fournir l'email de ses coéquipiers. Ces derniers recevront un mail les informants que vous les avez invité à rejoindre votre équipe ainsi qu'un lien vers la billeterie.</p>
+        <p>Les jeux ne vous seront pas fournis cependant Minecraft Offline est autorisé</p>
         <a class="btn btn-success float-end" href="/register/step1">Commencer l'inscription</a>
     </div>
 </body>

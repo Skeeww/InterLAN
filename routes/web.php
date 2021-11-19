@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (Request $request) {
-    $request->session()->put(['team_name' => '']);
-    return view('index');
-});
+Route::get('/', [IndexController::class, 'index']);
 Route::get('/reglement', function () {
     return view('reglement');
 });
@@ -30,11 +29,8 @@ Route::post('/register', function (Request $request) {
     ]);
     $request->session()->put(['team_name' => $validate['team_name']]);
     return view('register', ['team_name' => $validate['team_name']]);
-});
+})->middleware('limit_register_reached');
 Route::get('/register/step1', function (Request $request) {
     return view('step1', ['team_name' => $request->session()->get('team_name')]);
-});
-Route::post('/register/step2', function (Request $request) {
-    dd($request);
-    return view('step2');
-});
+})->middleware('limit_register_reached');
+Route::post('/register/validate', [RegisterController::class, 'submit'])->middleware('limit_register_reached');

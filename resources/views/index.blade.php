@@ -27,19 +27,34 @@
             <div class="text-info">
                 <p>Première édition du tournoi organisé par l'InterAsso</p>
                 <p>Une LAN multigaming en plein cœur de Lannion aux Ursulines !</p>
+                <p class="text-bold font-weight-lighter">{{ $nb_inscrits }}/{{ $MAX_MEMBERS }} PREINSCRITS</p>
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                @if ($nb_inscrits >= $MAX_MEMBERS)
+                    <p>Désolé le nombre de joueurs maximum a été atteints, mais ne désespérez pas, des places peuvent toujours ce libérer alors restez à l'affût</p>
+                @endif
             </div>
-            <div class="sign-up-form">
-                <form method="POST" action="/register">
-                    @csrf
-                    <fieldset>
-                        <p>Le nom de votre équipe</p>
-                        <input required name="team_name" type="text">
-                    </fieldset>
-                    <div id="button">
-                        <button type="submit">S'INSCRIRE</button>
-                    </div>
-                </form>
-            </div>
+            @if ($nb_inscrits < $MAX_MEMBERS)
+                <div class="sign-up-form">
+                    <form method="POST" action="/register">
+                        @csrf
+                        <fieldset>
+                            <p>Le nom de votre équipe</p>
+                            <input required placeholder="GameMasterz" name="team_name" type="text">
+                        </fieldset>
+                        <div id="button">
+                            <button type="submit">S'INSCRIRE</button>
+                        </div>
+                    </form>
+                </div>
+            @endif
         </div>
     </div>
     <div class="games">
