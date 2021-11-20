@@ -19,7 +19,7 @@ class RegisterController extends Controller
             'player.*.name'     =>  'required|string',
             'player.*.surname'  =>  'required|string',
             'player.*.username' =>  'required|distinct',
-            'player.*.email'    =>  'required|distinct|email|unique:App\Models\Player,email',
+            'player.*.email'    =>  'required|distinct|email:rfc,dns|unique:App\Models\Player,email',
             'rules'             =>  'required|accepted'
         ]);
 
@@ -57,7 +57,7 @@ class RegisterController extends Controller
                 die("Une erreur est survenu lors de l'envoi du mail\n Merci d'envoyer un mail à interasso.lannion@gmail.com afin de résoudre ce soucis");
             }
         }
-        
+
         return view('validate');
     }
 }
