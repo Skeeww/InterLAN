@@ -63,20 +63,20 @@
         <hr/>
         <div class="game-list">
             <div class="game">
-                <img class="cover" src="img/games/minecraft.jpg"/>
-                <p>Duel de construction associez vous à des pros de la brique si vous souhaitez gagner</p>
-            </div>
-            <div class="game">
                 <img class="cover" src="img/games/tf2.jpg"/>
                 <p>Vous vous foutez sur la gueule mais cette fois de 9 manières différentes</p>
             </div>
             <div class="game">
-                <img class="cover" src="img/games/gmod.jpg"/>
-                <p>Oh bordel encore des textures roses</p>
-            </div>
-            <div class="game">
                 <img class="cover" src="img/games/tm.jpg"/>
                 <p>VROOM VROOM mais sans le ballon (attention à la glace)</p>
+            </div>
+            <div class="game">
+                <img class="cover" src="img/games/minecraft.jpg"/>
+                <p>Duel de construction associez vous à des pros de la brique si vous souhaitez gagner</p>
+            </div>
+            <div class="game">
+                <img class="cover" src="img/games/dbdl.jpg"/>
+                <p>Un tueur, 4 survivants, 5 générateurs, beaucoup de coups de couteau</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/speedrunners.jpg"/>
@@ -87,18 +87,21 @@
                 <p>RUSH B P90 ONLY</p>
             </div>
             <div class="game">
-                <img class="cover" src="img/games/portal2.jpg"/>
-                <p>Un rond bleu où quand tu passes dedans tu arrives dans le rond orange sauf que là c’est à deux et faut aller fast as fok</p>
-            </div>
-            <div class="game">
-                <img class="cover" src="img/games/dbdl.jpg"/>
-                <p>Un tueur, 4 survivants, 5 générateurs, beaucoup de coups de couteau</p>
-            </div>
-            <div class="game">
                 <img class="cover" src="img/games/l4d2.jpg"/>
                 <p>Encore 4 survivants mais là c’est contre des zombies et faut s’enfuir</p>
             </div>
+            <div class="game">
+                <img class="cover" src="img/games/gmod.jpg"/>
+                <p>Oh bordel encore des textures roses</p>
+            </div>
+            <div class="game">
+                <img class="cover" src="img/games/portal2.jpg"/>
+                <p>Un rond bleu où quand tu passes dedans tu arrives dans le rond orange sauf que là c’est à deux et faut aller fast as fok</p>
+            </div>
         </div>
+    </div>
+    <div class="footer">
+        <p>Réalisé avec le 💖 par Léo, Mattys, <a href="https://noan.dev">Noan</a>, Loic, Alan, Chloé, Mathieu, Hugues et Dany. En partenariat avec l'InterAsso</p>
     </div>
 </body>
 </html>
