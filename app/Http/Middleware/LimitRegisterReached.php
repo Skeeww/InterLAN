@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class LimitRegisterReached
 {
-    public static $MAX_MEMBERS = 5;
+    public static $MAX_MEMBERS = 200;
 
     /**
      * Handle an incoming request.
