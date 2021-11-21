@@ -11,6 +11,15 @@
     <meta property="og:image" content="./logo.png">
     <meta property="og:url" content="https://inter-lan.fr">
     <link rel="icon" type="image/png" href="{{asset('img/logo.png')}}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC4WZ29GDJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MC4WZ29GDJ');
+    </script>
 </head>
 <body>
     <p class="alert-info">
