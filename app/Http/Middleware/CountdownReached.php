@@ -17,7 +17,7 @@ class CountdownReached
     public function handle(Request $request, Closure $next)
     {
         // Redirect to wait if current url is not wait and current date is before 2021-11-21T00:00:00
-        $countdown_end = (strtotime('2021-11-22T00:00:00') < time());
+        $countdown_end = (strtotime('2021-11-23T00:00:00') < time());
         if (
             !$request->is('wait') &&
             !$countdown_end
