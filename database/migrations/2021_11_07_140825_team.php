@@ -17,6 +17,7 @@ class Team extends Migration
         Schema::create("team", function(Blueprint $schema) {
             $schema->string('name')->nullable(false)->primary();
             $schema->boolean('validated')->nullable(false)->default(false);
+            $schema->timestamps();
         });
     }
 

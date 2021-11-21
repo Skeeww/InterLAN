@@ -20,6 +20,7 @@ class Player extends Migration
             $schema->string('email')->primary();
             $schema->string('team_name')->nullable(false);
             $schema->text('ticket_id')->nullable(true)->default(null);
+            $schema->timestamps();
             $schema->foreign('team_name')->references('name')->on('team');
         });
     }
