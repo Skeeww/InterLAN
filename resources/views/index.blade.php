@@ -26,7 +26,7 @@
         <div class="right-side">
             <div class="text-info">
                 <p>Première édition du tournoi organisé par l'InterAsso</p>
-                <p>Une LAN multigaming en plein cœur de Lannion aux Ursulines !</p>
+                <p>Une LAN multigaming en plein cœur de Lannion aux Ursulines le 10 mars 2022 !</p>
                 <p class="text-bold font-weight-lighter">{{ $nb_inscrits }}/{{ $MAX_MEMBERS }} PREINSCRITS</p>
                 @if ($errors->any())
                 <div class="alert alert-danger">
