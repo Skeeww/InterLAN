@@ -16,13 +16,16 @@ class CountdownReached
      */
     public function handle(Request $request, Closure $next)
     {
-        // Redirect to "/wait" while the current time is not 2021-11-22T00:00:00+00:00(UTC+1)
-        if ($request->getUri() === route('wait')) {
-            return $next($request);
-        } else if (date('Y-m-d\TH:i:s\Z') < '2021-11-22T00:00:00+01:00') {
-            return redirect('/wait');
-        } else {
+        // Redirect to wait if current url is not wait and current date is before 2021-11-21T00:00:00
+        $countdown_end = (strtotime('2021-11-22T00:00:00') < time());
+        if (
+            !$request->is('wait') &&
+            !$countdown_end
+        ) {
+            return redirect('wait');
+        } else if ($request->is('wait') && $countdown_end) {
             return redirect('/');
         }
+        return $next($request);
     }
 }

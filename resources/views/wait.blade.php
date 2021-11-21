@@ -57,8 +57,11 @@
         const countdown = document.getElementById('countdown');
         setInterval(() => {
             // Delta between server time and 22-11-2020 00:00:00(UTC+1)
-            const delta = moment.utc('2020-11-22 00:00:00').diff(moment.utc(), 'seconds');
+            const delta = moment('2021-11-22 00:00:00').diff(moment.utc(), 'seconds');
             countdown.innerHTML = moment.utc(delta * 1000).format('HH:mm:ss');
+            if (delta <= 0) {
+                countdown.innerHTML = 'INSCRIPTION OUVERTES';
+            }
         }, 500);
     </script>
 </body>
