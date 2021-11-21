@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>22/11/2021 00H00</title>
+    <title>23/11/2021 00H00</title>
     <link rel="icon" type="image/png" href="{{asset('img/logo.png')}}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
@@ -151,7 +151,7 @@
         setInterval(() => {
             // Delta between server time and 22-11-2020 00:00:00(UTC+1)
             const delta = moment('2021-11-23 00:00:00').diff(moment.utc(), 'seconds');
-            countdown.innerHTML = moment.utc(delta * 1000).format('HH:mm:ss');
+            countdown.innerHTML = moment.utc(delta * 1000).format('J-DD HH:mm:ss');
             if (delta <= 0) {
                 countdown.innerHTML = 'INSCRIPTION OUVERTES';
             }
