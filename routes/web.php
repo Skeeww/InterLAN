@@ -34,3 +34,6 @@ Route::get('/register/step1', function (Request $request) {
     return view('step1', ['team_name' => $request->session()->get('team_name')]);
 })->middleware('limit_register_reached');
 Route::post('/register/validate', [RegisterController::class, 'submit'])->middleware('limit_register_reached');
+Route::get('/wait', function () {
+    return view('wait');
+})->name('wait');

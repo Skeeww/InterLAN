@@ -21,6 +21,21 @@ class RegisterController extends Controller
             'player.*.username' =>  'required|distinct',
             'player.*.email'    =>  'required|distinct|email:rfc,dns|unique:App\Models\Player,email',
             'rules'             =>  'required|accepted'
+        ], [
+            'team_name.required'         =>  'Team name is required',
+            'team_name.unique'           =>  'Team name is already taken',
+            'player.required'            =>  'Players are required',
+            'player.array'               =>  'Players must be an array',
+            'player.min'                 =>  'Players must have at least 5 players',
+            'player.max'                 =>  'Players must have at most 5 players',
+            'player.*.name.required'     =>  'Player name is required',
+            'player.*.surname.required'  =>  'Player surname is required',
+            'player.*.username.required' =>  'Player username is required',
+            'player.*.email.required'    =>  'Player email is required',
+            'player.*.email.distinct'    =>  'Player email is already taken',
+            'player.*.email.email'       =>  'Player email is not valid',
+            'rules.required'             =>  'You must accept the rules',
+            'rules.accepted'             =>  'You must accept the rules'
         ]);
 
         $team = new Team;
@@ -54,7 +69,7 @@ class RegisterController extends Controller
             try {
                 $sendgrid->send($email);
             } catch (Exception $e) {
-                die("Une erreur est survenu lors de l'envoi du mail\n Merci d'envoyer un mail à interasso.lannion@gmail.com afin de résoudre ce soucis");
+                echo("Une erreur est survenu lors de l'envoi du mail\n Merci d'envoyer un mail à interasso.lannion@gmail.com afin de résoudre ce soucis");
             }
         }
 

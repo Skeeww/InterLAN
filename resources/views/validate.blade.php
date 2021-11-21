@@ -12,9 +12,10 @@
         <h1 class="display-1">Inscription Pré-validée</h1>
         <hr/>
         <div class="alert alert-success">
-            Félicitation ! Votre équipe a bien été créé, les membres de l'équipe vont recevoir un mail afin d'acheter les billets d'entrer et de valider votre inscription.
+            Félicitation ! Votre équipe a bien été créé. Vous allez recevoir un mail vous indiquant la marche à suivre pour finaliser l'inscription de votre équipe (pensez à vérifier vos spams).
         </div>
         <p>En cas de problème n'hésitez pas à nous contacter, <a href="mailto:interlan.lannion@gmail.com">interlan.lannion@gmail.com</a></p>
+        <a href="/" class="btn btn-primary">Retourner à l'accueil</a>
     </div>
 </body>
 </html>
