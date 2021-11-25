@@ -14,9 +14,10 @@ class Team extends Migration
      */
     public function up()
     {
-        Schema::create("teams", function(Blueprint $schema) {
+        Schema::create("team", function(Blueprint $schema) {
             $schema->string('name')->nullable(false)->primary();
             $schema->boolean('validated')->nullable(false)->default(false);
+            $schema->timestamps();
         });
     }
 
@@ -27,7 +28,7 @@ class Team extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("players");
-        Schema::dropIfExists("teams");
+        Schema::dropIfExists("player");
+        Schema::dropIfExists("team");
     }
 }

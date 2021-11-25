@@ -11,6 +11,15 @@
     <meta property="og:image" content="./logo.png">
     <meta property="og:url" content="https://inter-lan.fr">
     <link rel="icon" type="image/png" href="{{asset('img/logo.png')}}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC4WZ29GDJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MC4WZ29GDJ');
+    </script>
 </head>
 <body>
     <p class="alert-info">
@@ -26,20 +35,35 @@
         <div class="right-side">
             <div class="text-info">
                 <p>Première édition du tournoi organisé par l'InterAsso</p>
-                <p>Une LAN multigaming en plein cœur de Lannion aux Ursulines !</p>
+                <p>Une LAN multigaming en plein cœur de Lannion aux Ursulines le 10 mars 2022 !</p>
+                <p class="text-bold font-weight-lighter">{{ $nb_inscrits }}/{{ $MAX_MEMBERS }} PREINSCRITS</p>
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                @if ($nb_inscrits >= $MAX_MEMBERS)
+                    <p>Désolé le nombre de joueurs maximum a été atteints, mais ne désespérez pas, des places peuvent toujours ce libérer alors restez à l'affût</p>
+                @endif
             </div>
-            <div class="sign-up-form">
-                <form method="POST" action="/register">
-                    @csrf
-                    <fieldset>
-                        <p>Le nom de votre équipe</p>
-                        <input required name="team_name" type="text">
-                    </fieldset>
-                    <div id="button">
-                        <button type="submit">S'INSCRIRE</button>
-                    </div>
-                </form>
-            </div>
+            @if ($nb_inscrits < $MAX_MEMBERS)
+                <div class="sign-up-form">
+                    <form method="POST" action="/register">
+                        @csrf
+                        <fieldset>
+                            <p>Le nom de votre équipe</p>
+                            <input required placeholder="GameMasterz" name="team_name" type="text">
+                        </fieldset>
+                        <div id="button">
+                            <button type="submit">S'INSCRIRE</button>
+                        </div>
+                    </form>
+                </div>
+            @endif
         </div>
     </div>
     <div class="games">
@@ -48,20 +72,20 @@
         <hr/>
         <div class="game-list">
             <div class="game">
-                <img class="cover" src="img/games/minecraft.jpg"/>
-                <p>Duel de construction associez vous à des pros de la brique si vous souhaitez gagner</p>
-            </div>
-            <div class="game">
                 <img class="cover" src="img/games/tf2.jpg"/>
                 <p>Vous vous foutez sur la gueule mais cette fois de 9 manières différentes</p>
             </div>
             <div class="game">
-                <img class="cover" src="img/games/gmod.jpg"/>
-                <p>Oh bordel encore des textures roses</p>
-            </div>
-            <div class="game">
                 <img class="cover" src="img/games/tm.jpg"/>
                 <p>VROOM VROOM mais sans le ballon (attention à la glace)</p>
+            </div>
+            <div class="game">
+                <img class="cover" src="img/games/minecraft.jpg"/>
+                <p>Duel de construction associez vous à des pros de la brique si vous souhaitez gagner</p>
+            </div>
+            <div class="game">
+                <img class="cover" src="img/games/dbdl.jpg"/>
+                <p>Un tueur, 4 survivants, 5 générateurs, beaucoup de coups de couteau</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/speedrunners.jpg"/>
@@ -72,18 +96,21 @@
                 <p>RUSH B P90 ONLY</p>
             </div>
             <div class="game">
-                <img class="cover" src="img/games/portal2.jpg"/>
-                <p>Un rond bleu où quand tu passes dedans tu arrives dans le rond orange sauf que là c’est à deux et faut aller fast as fok</p>
-            </div>
-            <div class="game">
-                <img class="cover" src="img/games/dbdl.jpg"/>
-                <p>Un tueur, 4 survivants, 5 générateurs, beaucoup de coups de couteau</p>
-            </div>
-            <div class="game">
                 <img class="cover" src="img/games/l4d2.jpg"/>
                 <p>Encore 4 survivants mais là c’est contre des zombies et faut s’enfuir</p>
             </div>
+            <div class="game">
+                <img class="cover" src="img/games/gmod.jpg"/>
+                <p>Oh bordel encore des textures roses</p>
+            </div>
+            <div class="game">
+                <img class="cover" src="img/games/portal2.jpg"/>
+                <p>Un rond bleu où quand tu passes dedans tu arrives dans le rond orange sauf que là c’est à deux et faut aller fast as fok</p>
+            </div>
         </div>
+    </div>
+    <div class="footer">
+        <p>Réalisé avec le 💖 par Léo, Mattys, <a href="https://noan.dev">Noan</a>, Loic, Alan, Chloé, Mathieu, Hugues et Dany. En partenariat avec l'InterAsso</p>
     </div>
 </body>
 </html>

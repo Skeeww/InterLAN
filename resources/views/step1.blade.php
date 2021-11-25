@@ -6,115 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InterLan 2022 - Inscription</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MC4WZ29GDJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MC4WZ29GDJ');
+</script>
 </head>
 <body class="bg-dark text-white">
-    <div class="container">
-        <form action="/register/step2" method="POST">
+    <div class="container mb-5">
+        <h1 class="display-1">Inscription - Etape 1</h1>
+        <hr/>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form action="/register/validate" method="POST">
             @csrf
-            <h1 class="display-1">Inscription - Etape 1</h1>
-            <hr/>
             <div class="mb-5">
                 <label class="form-label">Nom de l'équipe</label>
-                <input class="form-control" type="text" value="{{$team_name}}" name="team_name"/>
+                <input class="form-control" type="text" value="{{$team_name}}" name="team_name" readonly required/>
             </div>
-            <h3>Joueur 1</h3>
-            <div class="row">
-                <div class="col mb-5">
-                    <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[0][name]"/>
+            @for ($i = 0; $i < 5; $i++)
+                <h3>Joueur {{$i + 1}}</h3>
+                <div class="row">
+                    <div class="col mb-5">
+                        <label class="form-label">Nom</label>
+                        <input class="form-control" value='{{{old("player") ? old("player")[$i]["name"] : ''}}}' autocomplete="family-name" type="text" name="player[{{$i}}][name]"/>
+                    </div>
+                    <div class="col mb-5">
+                        <label class="form-label">Prénom</label>
+                        <input class="form-control" value='{{{old("player") ? old("player")[$i]["surname"] : ''}}}' autocomplete="given-name" type="text" name="player[{{$i}}][surname]"/>
+                    </div>
+                    <div class="col mb-5">
+                        <label class="form-label">Pseudo</label>
+                        <input class="form-control" value='{{{old("player") ? old("player")[$i]["username"] : ''}}}' autocomplete="username" type="text" name="player[{{$i}}][username]"/>
+                    </div>
+                    <div class="col mb-5">
+                        <label class="form-label">Email</label>
+                        <input class="form-control" value='{{{old("player") ? old("player")[$i]["email"] : ''}}}' type="email" autocomplete="email" name="player[{{$i}}][email]"/>
+                    </div>
                 </div>
-                <div class="col mb-5">
-                    <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[0][surname]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[0][username]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[0][email]"/>
-                </div>
-            </div>
-            <h3>Joueur 2</h3>
-            <div class="row">
-                <div class="col mb-5">
-                    <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[1][name]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[1][surname]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[1][username]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[1][email]"/>
-                </div>
-            </div>
-            <h3>Joueur 3</h3>
-            <div class="row">
-                <div class="col mb-5">
-                    <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[2][name]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[2][surname]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[2][username]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[2][email]"/>
-                </div>
-            </div>
-            <h3>Joueur 4</h3>
-            <div class="row">
-                <div class="col mb-5">
-                    <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[3][name]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[3][surname]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[3][username]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[3][email]"/>
-                </div>
-            </div>
-            <h3>Joueur 5</h3>
-            <div class="row">
-                <div class="col mb-5">
-                    <label class="form-label">Nom</label>
-                    <input class="form-control" type="text" name="player[4][name]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Prénom</label>
-                    <input class="form-control" type="text" name="player[4][surname]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Pseudo</label>
-                    <input class="form-control" type="text" name="player[4][username]"/>
-                </div>
-                <div class="col mb-5">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="player[4][email]"/>
-                </div>
-            </div>
+            @endfor
             <div class="row">
                 <div class="mb-5 d-inline-block">
-                    <input type="checkbox" class="form-check-input" name="rules">
+                    <input type="checkbox" class="form-check-input" name="rules" required>
                     <label> En cochant cette case vous confirmez avoir lu et accepté <a target="reglement" href="/reglement">le règlement du tournoi</a></label>
                 </div>
             </div>

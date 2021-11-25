@@ -214,6 +214,14 @@ body {
     width: 100vw;
     display: none;
 }
+.footer {
+    text-align: center;
+    padding: 50px;
+    background-color: #000;
+}
+a, a:visited {
+    color: var(--blue);
+}
 
 @media screen and (max-width: 1270px) {
     .alert-info {
