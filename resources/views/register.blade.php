@@ -30,7 +30,7 @@
         <hr/>
         <h3>Déroulement des inscriptions</h3>
         <p>La LAN sera organiser sous forme de tournoi multi-gaming entre équipes de 5 joueurs dispersés dans des poules. <b>La personne s'inscrivant à l'InterLAN est le "chef de l'équipe"</b>, il renseignerat lors de l'inscription l'email de ses coéquipiers. Ces derniers recevront un mail les informants que vous les avez invité à rejoindre votre équipe ainsi qu'un lien vers la billeterie.</p>
-        <div class="alert alert-warning"><b>Les jeux ne vous seront pas fournis</b> cependant Minecraft Offline est autorisé ! Avant de vous inscrires, assurez-vous de posséder les jeux suivant: <b>TeamFortress2, Trackmania, Minecraft, Dead By Daylight, Speedrunners, Counter Striker: Global Offensive, Left4Dead2, Garry's Mod et Portal 2</b></div>
+        <div class="alert alert-warning"><b>Les jeux ne vous seront pas fournis</b> cependant Minecraft Offline est autorisé ! Avant de vous inscrires, assurez-vous de posséder les jeux suivant: <b>Trackmania, Minecraft, Dead By Daylight, Speedrunners, Counter Striker: Global Offensive, Garry's Mod et Portal 2</b></div>
         <a class="mt-5 btn btn-success float-end" href="/register/step1">Commencer l'inscription</a>
     </div>
 </body>
