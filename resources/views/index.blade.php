@@ -72,8 +72,8 @@
         <hr/>
         <div class="game-list">
             <div class="game">
-                <img class="cover" src="img/games/tf2.jpg"/>
-                <p>Vous vous foutez sur la gueule mais cette fois de 9 manières différentes</p>
+                <img class="cover" src="img/games/crabgame.jpg"/>
+                <p>Netflix s'en est inspirée pour SquidGame askip</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/tm.jpg"/>
@@ -96,8 +96,8 @@
                 <p>RUSH B P90 ONLY</p>
             </div>
             <div class="game">
-                <img class="cover" src="img/games/l4d2.jpg"/>
-                <p>Encore 4 survivants mais là c’est contre des zombies et faut s’enfuir</p>
+		<img class="cover" src="img/games/tf2.jpg"/>
+                <p>MEDIC !</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/gmod.jpg"/>

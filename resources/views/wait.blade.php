@@ -151,7 +151,9 @@
         setInterval(() => {
             // Delta between server time and 22-11-2020 00:00:00(UTC+1)
             const delta = moment('2021-12-02 15:00:00').diff(moment.utc(), 'seconds');
-            countdown.innerHTML = moment.utc(delta * 1000).format('J-DD HH:mm:ss');
+            // Get number of day of delta
+            const days = Math.floor(delta / (60 * 60 * 24));
+            countdown.innerHTML = `J-${days} ${moment.utc(delta * 1000).format('HH:mm:ss')}`;
             if (delta <= 0) {
                 countdown.innerHTML = 'INSCRIPTION OUVERTES';
             }

@@ -43,12 +43,12 @@
         <h3 class="bg-primary p-2 rounded">Article 1 : Accès à la LAN</h3>
         
         <p>
-            L'InterLAN se déroule à Lannion(22700) dans la salle des Ursulines (Place des Patriotes).
+            L'InterLAN se déroule à Lannion(22300) dans la salle des Ursulines (Place des Patriotes).
         </p>
         
         <p>- Il est impératif que ce règlement soit entièrement lu et accepté avant l’inscription à l’événement.</p>
         <p>- Les joueurs voulant participer à la LAN doivent OBLIGATOIREMENT s’être pré-inscrits sur le site https://inter-lan.fr avant la date de clôture indiquée en préambule</p>
-        <p>- L’accès à l'InterLAN est réservé aux personnes ayant payé leur droit d’entrée de 5 euros, montant fixé par les organisateurs qui correspond à la participation aux frais (achat et location de matériel, location d'un service de sécurité, déplacement de la croix rouge, etc) ainsi qu’à l’adhésion du joueur pour l'InterLAN.</p>
+        <p>- L’accès à l'InterLAN est réservé aux personnes ayant payé leur droit d’entrée de 12 euros, montant fixé par les organisateurs qui correspond à la participation aux frais (achat et location de matériel, location d'un service de sécurité, déplacement de la croix rouge, etc) ainsi qu’à l’adhésion du joueur pour l'InterLAN.</p>
         <p>- Les joueurs doivent impérativement se présenter à l’enregistrement munis d’une pièce d’identité avec photo (carte d’identité, passeport, permis de conduire…) ainsi que d'un Pass Sanitaire valide.</p>
         <p>- Le droit d’accès à la l'InterLAN concerne une personne et un ordinateur. Le participant apporte son propre matériel sous son entière responsabilité.</p>
         <p>- L’admission des joueurs mineurs se fera aux conditions indiquées à l’article 2.</p>
