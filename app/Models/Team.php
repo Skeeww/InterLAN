@@ -12,4 +12,5 @@ class Team extends Model
     protected $table = 'team';
     protected $primaryKey = 'name';
     public $timestamps = true;
+    public $incrementing = false;
 }
