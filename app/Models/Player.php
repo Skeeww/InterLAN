@@ -12,4 +12,5 @@ class Player extends Model
     protected $table = 'player';
     protected $primaryKey = 'email';
     public $timestamps = true;
+    public $incrementing = false;
 }

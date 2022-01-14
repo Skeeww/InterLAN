@@ -22,9 +22,14 @@
     </script>
 </head>
 <body>
-    <p class="alert-info">
-        Désolé le site n'est pas encore prêt pour un affichage mobile, si vous voulez la meilleur expérience possible inscrivez-vous depuis un PC.
-    </p>
+    <div class="banner-teams">
+        <p>
+            Dernières équipes inscrites:
+            @foreach ($teams as $team)
+                {{ $team->name }} - 
+            @endforeach
+        </p>
+    </div>
     <div class="sides">
         <svg class="shape" viewBox="0 0 1215 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1215 0V1080H476L0 0H1215Z" fill="#261838"/>
@@ -35,8 +40,8 @@
         <div class="right-side">
             <div class="text-info">
                 <p>Première édition du tournoi organisé par l'InterAsso</p>
-                <p>Une LAN multigaming en plein cœur de Lannion aux Ursulines le 10 mars 2022 !</p>
-                <p class="text-bold font-weight-lighter">{{ $nb_inscrits }}/{{ $MAX_MEMBERS }} PREINSCRITS</p>
+                <p>Une LAN multigaming en plein cœur de Lannion aux Ursulines le 10 mars 2022</p>
+                <p class="text-bold font-weight-lighter">{{ $nb_inscrits }}/{{ $MAX_MEMBERS }} joueurs préinscrits</p>
                 @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -68,16 +73,16 @@
     </div>
     <div class="games">
         <p class="under-text">Interlan mais genre pas comme intermarché fin bref cringe. Sinon aujourd'hui j'ai mangé des pâtes aux jambons tout en jouant au super jeu crab game fait par le youtubeur Dany. Fin voilà et vous sinon ça va bien ?</p>
-        <h2 class="title">LES JEUX</h2>
+        <h2 class="title" content="LES JEUX">LES JEUX</h2>
         <hr/>
         <div class="game-list">
             <div class="game">
                 <img class="cover" src="img/games/crabgame.jpg"/>
-                <p>Netflix s'en est inspirée pour SquidGame askip</p>
+                <p>Vous devrez survivre à divers épreuves soit par pur talents soit par pur chance</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/tm.jpg"/>
-                <p>VROOM VROOM mais sans le ballon (attention à la glace)</p>
+                <p>Réaliser le meilleur temps sur un lot de circuits pour atteindre le haut du classement</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/minecraft.jpg"/>
@@ -89,23 +94,23 @@
             </div>
             <div class="game">
                 <img class="cover" src="img/games/speedrunners.jpg"/>
-                <p>C’est la course avec les grapins et autres dashs</p>
+                <p>Parcourez plusieurs niveau dans cette lutte de vitesse face à 3 autres joueurs</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/csgo.jpg"/>
-                <p>RUSH B P90 ONLY</p>
+                <p>En équipe vous devrez poser une bombe ou la désamorcez tout en essuyant le tirs de vos adversaires</p>
             </div>
             <div class="game">
 		<img class="cover" src="img/games/tf2.jpg"/>
-                <p>MEDIC !</p>
+                <p>Amener un convoi de points en points tout en subissant les assauts de l'équipe advairse.</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/gmod.jpg"/>
-                <p>Oh bordel encore des textures roses</p>
+                <p>Déguiser en un élément du décors vous devrez survivre, dissimuler, face aux chasseurs qui sont là pour vous éliminer.</p>
             </div>
             <div class="game">
                 <img class="cover" src="img/games/portal2.jpg"/>
-                <p>Un rond bleu où quand tu passes dedans tu arrives dans le rond orange sauf que là c’est à deux et faut aller fast as fok</p>
+                <p>Jeu de réflexion et de puzzle avec une mécanique de portails. En coopération vous devrez réaliser le meilleur temps sur un lot de cartes.</p>
             </div>
         </div>
     </div>
